@@ -348,6 +348,94 @@
   .auth-foot{font-size:11.5px; color:var(--text-faint); font-weight:700; text-align:center; margin-top:18px; line-height:1.5;}
   .pw-meter{height:5px; border-radius:999px; background:#F6E3EA; overflow:hidden; margin-top:6px;}
   .pw-meter i{display:block; height:100%; width:0; transition:width .2s, background .2s;}
+
+  /* ======== v3: temas desbloqueáveis ======== */
+  [data-theme="menta"]{--berry:#16946C;--berry-dark:#0E6248;--berry-mid:#2FBF8F;--berry-light:#BFEADB;--pink-bg:#F0FAF6;--pink-card:#E1F5EC;--pink-card-2:#F6FCF9;--line:#CFEDE1;--text:#25443A;--text-soft:#5E8A7B;--text-faint:#9DC1B4}
+  [data-theme="lavanda"]{--berry:#7A4FD0;--berry-dark:#52329A;--berry-mid:#9B77E8;--berry-light:#DCCFF7;--pink-bg:#F6F2FE;--pink-card:#ECE4FC;--pink-card-2:#FAF8FF;--line:#E3D9FA;--text:#3A2F55;--text-soft:#7E6FA3;--text-faint:#B4A8D2}
+  [data-theme="pessego"]{--berry:#E0672B;--berry-dark:#A6461A;--berry-mid:#F2894F;--berry-light:#FBD6C0;--pink-bg:#FFF6F0;--pink-card:#FFEADD;--pink-card-2:#FFFAF6;--line:#F9DCCB;--text:#4E3123;--text-soft:#A27A63;--text-faint:#D0AE99}
+  [data-theme="oceano"]{--berry:#1F6FD1;--berry-dark:#154D93;--berry-mid:#4A90E8;--berry-light:#CFE1F8;--pink-bg:#F1F7FE;--pink-card:#E3EEFC;--pink-card-2:#F8FBFF;--line:#D5E5F8;--text:#22364F;--text-soft:#647C99;--text-faint:#A3B6CC}
+  [data-theme] body{background:var(--pink-bg)}
+
+  /* ======== Mascote Berry ======== */
+  .mascot-card{display:flex; gap:14px; align-items:center; background:linear-gradient(135deg,var(--pink-card),#fff); border:1px solid var(--line); border-radius:var(--radius-lg); padding:16px 18px; margin-bottom:14px; box-shadow:var(--shadow-sm); position:relative; overflow:hidden}
+  .mascot-svg{width:92px; height:92px; flex:0 0 92px; animation:bob 3s ease-in-out infinite}
+  .mascot-svg.small{width:54px;height:54px;flex-basis:54px}
+  @keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-5px) rotate(2deg)}}
+  .bubble{flex:1; background:#fff; border:2px solid var(--berry-light); border-radius:18px; padding:12px 14px; position:relative; min-width:0}
+  .bubble:before{content:""; position:absolute; left:-10px; top:28px; border:8px solid transparent; border-right-color:var(--berry-light)}
+  .bubble .who{font-family:'Baloo 2'; font-weight:800; color:var(--berry); font-size:13px}
+  .bubble .msg{font-weight:700; font-size:14.5px; line-height:1.4; margin-top:2px}
+  .bubble .acts{display:flex; gap:8px; margin-top:10px; flex-wrap:wrap}
+  .bubble .count{position:absolute; right:12px; top:10px; font-size:11px; font-weight:800; color:var(--text-faint)}
+  .mascot-fab{position:fixed; left:16px; bottom:86px; z-index:60; background:none; border:none; padding:0; filter:drop-shadow(0 6px 12px rgba(0,0,0,.18))}
+  .mascot-fab .badge{position:absolute; top:-2px; right:-2px; background:var(--danger); color:#fff; font-size:11px; font-weight:800; min-width:20px; height:20px; border-radius:999px; display:flex; align-items:center; justify-content:center; border:2px solid #fff}
+  @media(min-width:960px){ .mascot-fab{left:auto; right:110px; bottom:28px} }
+  .alert-item{display:flex; gap:12px; align-items:flex-start; padding:12px 0; border-bottom:1px solid var(--line)}
+  .alert-item:last-child{border-bottom:none}
+  .alert-item .ic{font-size:22px; line-height:1}
+  .alert-item .t{font-weight:700; font-size:14px}
+  .alert-item .lv-alta{color:var(--danger)}
+
+  /* ======== Voz ======== */
+  .mic-btn{width:38px; height:38px; border-radius:50%; border:none; background:var(--berry); color:#fff; font-size:17px; box-shadow:var(--shadow-sm)}
+  .mic-big{width:96px; height:96px; border-radius:50%; border:none; background:linear-gradient(145deg,var(--berry-mid),var(--berry)); color:#fff; font-size:40px; box-shadow:0 12px 30px rgba(0,0,0,.18); display:block; margin:8px auto 4px}
+  .mic-big.on{animation:pulse 1.2s ease-in-out infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(226,71,119,.45)}70%{box-shadow:0 0 0 22px rgba(226,71,119,0)}100%{box-shadow:0 0 0 0 rgba(226,71,119,0)}}
+  .transcript{min-height:52px; background:var(--pink-card-2); border:1px dashed var(--berry-light); border-radius:14px; padding:12px; font-weight:700; font-size:15px; margin:12px 0}
+  .transcript .interim{color:var(--text-faint)}
+  .parsed{background:#fff; border:2px solid var(--berry-light); border-radius:16px; padding:14px; margin-top:6px}
+  .parsed .k{font-size:12px; color:var(--text-soft); font-weight:800; text-transform:uppercase; letter-spacing:.04em}
+  .parsed .row{display:flex; justify-content:space-between; gap:10px; padding:6px 0; border-bottom:1px solid var(--line); font-weight:700; font-size:14px}
+  .parsed .row:last-child{border-bottom:none}
+  .src-tag{font-size:11px; font-weight:800; padding:3px 9px; border-radius:999px; background:var(--gold-bg); color:#9A6A00}
+  .examples{font-size:12.5px; color:var(--text-soft); font-weight:600; line-height:1.6}
+
+  /* ======== Gamificação ======== */
+  .lvl-hero{display:flex; gap:16px; align-items:center}
+  .lvl-badge{width:84px; height:84px; border-radius:24px; background:linear-gradient(145deg,var(--berry-mid),var(--berry-dark)); color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; font-family:'Baloo 2'; box-shadow:var(--shadow-md)}
+  .lvl-badge b{font-size:32px; line-height:1}
+  .lvl-badge span{font-size:11px; font-weight:700; opacity:.9}
+  .streak{display:flex; align-items:center; gap:10px; background:var(--gold-bg); border-radius:16px; padding:12px 14px; font-weight:800}
+  .streak .fire{font-size:30px}
+  .mission{display:flex; gap:12px; align-items:center; padding:10px 0; border-bottom:1px solid var(--line)}
+  .mission:last-child{border-bottom:none}
+  .mission .mi{width:38px; height:38px; border-radius:12px; background:var(--pink-card); display:flex; align-items:center; justify-content:center; font-size:19px; flex:0 0 38px}
+  .mission.ok .mi{background:var(--mint-bg)}
+  .mission .mt{flex:1; font-weight:700; font-size:14px}
+  .mission .mp{height:6px; border-radius:999px; background:var(--pink-card); margin-top:6px; overflow:hidden}
+  .mission .mp i{display:block; height:100%; background:var(--berry-mid)}
+  .mission.ok .mp i{background:var(--mint)}
+  .mission .xp{font-size:12px; font-weight:800; color:var(--berry)}
+  .ach-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(132px,1fr)); gap:10px}
+  .ach{background:#fff; border:1px solid var(--line); border-radius:16px; padding:14px 10px; text-align:center}
+  .ach .e{font-size:30px}
+  .ach .n{font-weight:800; font-size:13px; margin-top:6px}
+  .ach .d{font-size:11.5px; color:var(--text-soft); font-weight:600; margin-top:2px; line-height:1.3}
+  .ach.locked{opacity:.45; filter:grayscale(1)}
+  .themes{display:flex; gap:10px; flex-wrap:wrap}
+  .theme-dot{width:64px; text-align:center; font-size:11.5px; font-weight:800; background:none; border:none; color:var(--text-soft)}
+  .theme-dot i{display:block; width:46px; height:46px; margin:0 auto 4px; border-radius:50%; border:3px solid #fff; box-shadow:var(--shadow-sm)}
+  .theme-dot.on i{outline:3px solid var(--berry)}
+  .theme-dot.lock{opacity:.4}
+  .levelup{text-align:center; padding:10px 0}
+  .levelup .big{font-size:64px; animation:pop .6s ease-out}
+  @keyframes pop{0%{transform:scale(.3)}70%{transform:scale(1.15)}100%{transform:scale(1)}}
+  .confetti{position:fixed; inset:0; pointer-events:none; z-index:400; overflow:hidden}
+  .confetti i{position:absolute; top:-20px; font-style:normal; font-size:22px; animation:fall 2.4s linear forwards}
+  @keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+
+  /* ======== Saúde ======== */
+  .stat3{display:grid; grid-template-columns:repeat(3,1fr); gap:10px}
+  .stat3 .sb{background:var(--pink-card-2); border-radius:14px; padding:12px; text-align:center}
+  .stat3 .sb b{display:block; font-family:'Baloo 2'; font-size:22px; color:var(--berry-dark)}
+  .stat3 .sb span{font-size:11.5px; font-weight:700; color:var(--text-soft)}
+  .chart-wrap svg{width:100%; height:auto; display:block}
+  .wk-dots{display:flex; gap:6px; margin-top:10px}
+  .wk-dots span{flex:1; text-align:center; font-size:11px; font-weight:800; color:var(--text-faint)}
+  .wk-dots span i{display:block; height:30px; border-radius:10px; background:var(--pink-card); margin-bottom:4px}
+  .wk-dots span.on i{background:var(--mint)}
+  .wk-dots span.today{color:var(--berry)}
+  @media(max-width:600px){ .level-chip .lc-xp{display:none} .brand-name{font-size:18px} .topbar-right{gap:6px} }
 </style>
 </head>
 <body>
@@ -357,7 +445,7 @@
       <div class="brand-mark">🍓</div>
       <div class="brand-name">BerryLife</div>
     </div>
-    <div class="topbar-right"><div class="level-chip" id="levelChip"></div><button class="avatar" id="avatarBtn" onclick="openAccount()" aria-label="Minha conta">?<span class="sync-dot" id="syncDot"></span></button></div>
+    <div class="topbar-right"><button class="mic-btn" onclick="openVoice()" aria-label="Falar com o Berry" title="Falar com o Berry">🎤</button><div class="level-chip" id="levelChip"></div><button class="avatar" id="avatarBtn" onclick="openAccount()" aria-label="Minha conta">?<span class="sync-dot" id="syncDot"></span></button></div>
   </div>
   <div class="hero" id="heroBlock"></div>
   <div class="content" id="content"></div>
@@ -367,6 +455,7 @@
 <div id="authRoot"></div>
 <div id="modalRoot"></div>
 <div id="toastRoot"></div>
+<button class="mascot-fab" id="mascotFab" onclick="openAlerts()" aria-label="Alertas do Berry"></button>
 
 <script>
 /* =========================================================
@@ -392,60 +481,126 @@ const MOTIVATIONAL = [
   "Descansar também faz parte do progresso. Vá no seu ritmo. 🌷"
 ];
 
-function demoState(){ return {
+function demoState(){
+  const D = addDays;
+  const T = (title, category, priority, due, done, doneAt) => ({id:uid(), title, category, priority, due, done:!!done, ...(done?{doneAt: doneAt||due}:{})});
+  const tx = (type, description, category, amount, date) => ({id:uid(), type, description, category, amount, date});
+  const weights = [69.4,69.1,68.9,68.7,68.8,68.3,68.0,67.8,67.5,67.6,67.1,66.8,66.5,66.3].map((kg,i)=>({id:uid(), date:D(-41+i*3), kg}));
+  const wk = [['musculacao',55,'Treino de pernas'],['corrida',30,'5 km no parque'],['musculacao',60,'Costas e bíceps'],['funcional',40,''],['musculacao',50,'Peito e tríceps'],['caminhada',45,''],['yoga',30,'Alongamento'],['musculacao',60,'Pernas'],['corrida',35,'Intervalado'],['musculacao',55,'Superiores'],['bike',50,''],['musculacao',60,'Pernas e glúteos'],['funcional',45,''],['corrida',32,'6 km'],['musculacao',55,'Costas']];
+  const offs = [-40,-38,-36,-33,-31,-29,-26,-24,-22,-19,-17,-15,-12,-10,-8];
+  const workouts = wk.map(([type,minutes,notes],i)=>({id:uid(), type, minutes, date:D(offs[i]), notes}));
+  workouts.push({id:uid(), type:'musculacao', minutes:55, date:D(0), notes:'Treino de pernas'});
+  const dow = (new Date().getDay()+6)%7;
+  if(dow >= 1) workouts.push({id:uid(), type:'musculacao', minutes:60, date:D(-1), notes:'Treino A — superiores'});
+  if(dow >= 2) workouts.push({id:uid(), type:'corrida', minutes:30, date:D(-2), notes:'5 km'});
+  return {
   tab: 'inicio',
-  user: { name: 'Você', xp: 35 },
+  user: { name: 'Você', xp: 642 },
   prefs: { hideMoney: false, motivIndex: Math.floor(Math.random()*MOTIVATIONAL.length) },
   tasks: [
-    {id:uid(), title:'Entregar resumo de Banco de Dados', category:'faculdade', priority:'alta', due: todayISO(), done:false},
-    {id:uid(), title:'Revisar protótipo do cliente', category:'trabalho', priority:'media', due: todayISO(), done:false},
-    {id:uid(), title:'Pagar internet', category:'financeiro', priority:'baixa', due: todayISO(), done:true},
-    {id:uid(), title:'Alongar 10 minutos', category:'pessoal', priority:'baixa', due: todayISO(), done:false},
+    T('Revisar slides da apresentação de Engenharia de Software','faculdade','alta',D(0)),
+    T('Estudar normalização para a P2 de Banco de Dados','faculdade','alta',D(0)),
+    T('Responder e-mail do cliente sobre o protótipo','trabalho','media',D(0)),
+    T('Pagar fatura do cartão','financeiro','alta',D(0)),
+    T('Enviar relatório semanal da telemetria','trabalho','media',D(-1)),
+    T('Comprar presente da Marina','pessoal','baixa',D(2)),
+    T('Agendar consulta no dentista','pessoal','baixa',D(4)),
+    T('Atualizar perfil no Workana','trabalho','baixa',D(6)),
+    T('Lista de exercícios de Estrutura de Dados','faculdade','media',D(3)),
+    T('Organizar planilha de gastos de novembro','financeiro','media',D(1)),
+    T('Montar modelo conceitual no brModelo','faculdade','alta',D(-3),true),
+    T('Configurar banco no Supabase','trabalho','media',D(-4),true),
+    T('Renovar matrícula da academia','pessoal','media',D(-6),true),
+    T('Entregar exercício 10 de Banco de Dados','faculdade','alta',D(-8),true),
+    T('Ler capítulo 5 de Clean Code','pessoal','baixa',D(-2),true),
+    T('Revisar pull request do estagiário','trabalho','media',D(-1),true),
   ],
   events: [
-    {id:uid(), title:'Prova de Estrutura de Dados', type:'academico', date: todayISO(), time:'19:00'},
-    {id:uid(), title:'Reunião com equipe', type:'profissional', date: todayISO(), time:'14:30'},
-    {id:uid(), title:'Aniversário da Marina', type:'pessoal', date: todayISO(), time:'20:00'},
+    {id:uid(), title:'Apresentação do BerryLife — Eng. de Software III', type:'academico', date:D(0), time:'19:00'},
+    {id:uid(), title:'Daily com a equipe', type:'profissional', date:D(0), time:'09:30'},
+    {id:uid(), title:'Academia — treino de pernas', type:'pessoal', date:D(0), time:'07:00'},
+    {id:uid(), title:'Reunião com cliente (app financeiro)', type:'profissional', date:D(1), time:'14:00'},
+    {id:uid(), title:'P2 de Banco de Dados', type:'academico', date:D(2), time:'19:00'},
+    {id:uid(), title:'Aniversário da Marina', type:'pessoal', date:D(3), time:'20:00'},
+    {id:uid(), title:'Dentista', type:'pessoal', date:D(5), time:'10:30'},
+    {id:uid(), title:'Palestra sobre IA na FATEC', type:'academico', date:D(8), time:'18:30'},
   ],
   subjects: [
     {id:uid(), name:'Banco de Dados', assignments:[
-      {id:uid(), title:'Resumo cap. 4', type:'trabalho', date: todayISO(), done:false},
-      {id:uid(), title:'Prova 1', type:'prova', date: todayISO(), done:false},
+      {id:uid(), title:'P2 — Normalização e SQL', type:'prova', date:D(2), done:false},
+      {id:uid(), title:'Exercício 11 — Projeto de Banco', type:'trabalho', date:D(-1), done:true, doneAt:D(-1)},
+      {id:uid(), title:'Exercício 10 — Consultas', type:'trabalho', date:D(-8), done:true, doneAt:D(-8)},
     ]},
-    {id:uid(), name:'Engenharia de Software', assignments:[
-      {id:uid(), title:'Entrega do projeto final', type:'trabalho', date: todayISO(), done:false},
+    {id:uid(), name:'Engenharia de Software III', assignments:[
+      {id:uid(), title:'Apresentação do projeto BerryLife', type:'trabalho', date:D(0), done:false},
+      {id:uid(), title:'Diagramas UML do sistema', type:'trabalho', date:D(-5), done:true, doneAt:D(-5)},
+    ]},
+    {id:uid(), name:'Estrutura de Dados', assignments:[
+      {id:uid(), title:'Lista 4 — Árvores', type:'trabalho', date:D(3), done:false},
+      {id:uid(), title:'Prova 2', type:'prova', date:D(12), done:false},
+    ]},
+    {id:uid(), name:'Inglês', assignments:[
+      {id:uid(), title:'Apresentação oral', type:'trabalho', date:D(9), done:false},
     ]},
   ],
   projects: [
-    {id:uid(), name:'App Financeiro — Cliente A', status:'andamento', progress:60},
-    {id:uid(), name:'Documentação interna', status:'pausado', progress:20},
+    {id:uid(), name:'App Financeiro — Cliente A', status:'andamento', progress:70},
+    {id:uid(), name:'Telemetria — painel de indicadores', status:'andamento', progress:45},
+    {id:uid(), name:'Site de portfólio', status:'pausado', progress:30},
+    {id:uid(), name:'Landing page — Freela', status:'concluido', progress:100},
   ],
   finance: {
     salary: 3200,
     transactions: [
-      {id:uid(), type:'entrada', description:'Salário', category:'Renda', amount:3200, date: todayISO()},
-      {id:uid(), type:'saida', description:'Mercado', category:'Alimentação', amount:180, date: todayISO()},
-      {id:uid(), type:'saida', description:'Uber', category:'Transporte', amount:35, date: todayISO()},
+      tx('entrada','Salário','Renda',3200,D(-15)),
+      tx('entrada','Freela — landing page','Freela',850,D(-9)),
+      tx('saida','Mercado do mês','Alimentação',412.5,D(-14)),
+      tx('saida','Aluguel (parte)','Contas',900,D(-13)),
+      tx('saida','Uber pra faculdade','Transporte',38.9,D(-11)),
+      tx('saida','Livro de Banco de Dados','Educação',89.9,D(-10)),
+      tx('saida','iFood','Alimentação',46.8,D(-7)),
+      tx('saida','Farmácia','Saúde',57.3,D(-6)),
+      tx('saida','Cinema com amigos','Lazer',62,D(-5)),
+      tx('saida','Gasolina','Transporte',150,D(-4)),
+      tx('saida','Padaria','Alimentação',23.5,D(-2)),
+      tx('saida','Mercado','Alimentação',134.2,D(-1)),
     ],
     fixed: [
-      {id:uid(), name:'Internet', amount:99.9},
-      {id:uid(), name:'Academia', amount:89.9},
+      {id:uid(), name:'Internet', amount:99.9}, {id:uid(), name:'Academia', amount:89.9},
+      {id:uid(), name:'Celular', amount:49.9}, {id:uid(), name:'Spotify', amount:21.9},
     ],
-    reserve: 1500,
+    reserve: 2350,
     investments: [
-      {id:uid(), name:'Tesouro Selic', amount:800},
-      {id:uid(), name:'CDB', amount:400},
+      {id:uid(), name:'Tesouro Selic', amount:1450}, {id:uid(), name:'CDB 110% CDI', amount:1180},
     ],
   },
   goals: [
-    {id:uid(), title:'Concluir curso de Java', category:'academica', deadline: addDays(20), progress:40},
-    {id:uid(), title:'Juntar reserva de emergência', category:'financeira', deadline: addDays(90), progress:25},
-    {id:uid(), title:'Fechar 3 projetos freelance', category:'profissional', deadline: addDays(45), progress:66},
-    {id:uid(), title:'Meditar 5x por semana', category:'pessoal', deadline: addDays(10), progress:80},
+    {id:uid(), title:'Chegar a 62 kg com saúde', category:'pessoal', deadline:D(110), progress:42},
+    {id:uid(), title:'Juntar R$ 5.000 de reserva', category:'financeira', deadline:D(75), progress:47},
+    {id:uid(), title:'Concluir certificação AWS Cloud Practitioner', category:'academica', deadline:D(6), progress:80},
+    {id:uid(), title:'Fechar 3 projetos freelance', category:'profissional', deadline:D(45), progress:66},
+    {id:uid(), title:'Ler 12 livros no ano', category:'pessoal', deadline:D(45), progress:75},
   ],
-  history: [],
+  history: [
+    {id:uid(), icon:'🏅', text:'Conquista desbloqueada: Rato de academia', date:D(-8), time:'07:52'},
+    {id:uid(), icon:'🏋️', text:'Treino registrado: Musculação (55 min)', date:D(-8), time:'07:50'},
+    {id:uid(), icon:'✅', text:'Tarefa concluída: "Revisar pull request do estagiário"', date:D(-1), time:'16:20'},
+    {id:uid(), icon:'🎓', text:'Atividade concluída: "Exercício 11 — Projeto de Banco" (Banco de Dados)', date:D(-1), time:'22:41'},
+    {id:uid(), icon:'⚖️', text:'Peso registrado: 66.3 kg', date:D(-2), time:'07:10'},
+    {id:uid(), icon:'🎯', text:'Missão do dia cumprida: Registrar um treino', date:D(-2), time:'07:40'},
+    {id:uid(), icon:'🏆', text:'Meta concluída: "Landing page — Freela"', date:D(-9), time:'18:05'},
+    {id:uid(), icon:'🏅', text:'Conquista desbloqueada: Semana perfeita', date:D(-5), time:'21:00'},
+  ],
   filters: { tasks:'todas', events:'todos' },
+  health: { heightCm: 165, goalKg: 62, weeklyWorkouts: 4, weights, workouts },
+  game: {
+    streak: 12, lastActive: D(-1), theme: 'morango', missionsDone: {},
+    achievements: { first_task:D(-41), tasks_25:D(-12), streak_3:D(-38), streak_7:D(-5), workout_1:D(-40), workout_10:D(-19), weigh_5:D(-29), goal_1:D(-9), saver:D(-15), level_5:D(-20) },
+    stats: { tasksDone: 38, workouts: workouts.length, weighIns: weights.length, voice: 0, goalsDone: 2 },
+  },
+  alertIndex: 0,
 }; }
+
 
 function emptyState0(){ return {
   tab: 'inicio',
@@ -455,6 +610,9 @@ function emptyState0(){ return {
   finance: { salary: 0, transactions: [], fixed: [], reserve: 0, investments: [] },
   goals: [], history: [],
   filters: { tasks:'todas', events:'todos' },
+  health: { heightCm: 0, goalKg: 0, weeklyWorkouts: 3, weights: [], workouts: [] },
+  game: { streak: 0, lastActive: '', achievements: {}, missionsDone: {}, theme: 'morango', stats: { tasksDone:0, workouts:0, weighIns:0, voice:0, goalsDone:0 } },
+  alertIndex: 0,
 }; }
 
 /* ---------- Persistência local (localStorage) ---------- */
@@ -463,7 +621,7 @@ function loadState(){
   try {
     const raw = localStorage.getItem(storageKey);
     if(raw){ const base = emptyState0(); const saved = JSON.parse(raw);
-      return {...base, ...saved, finance:{...base.finance, ...(saved.finance||{})}, prefs:{...base.prefs, ...(saved.prefs||{})}, filters:{...base.filters, ...(saved.filters||{})}, tab:'inicio'}; }
+      return mergeState(base, saved); }
   } catch(e){ console.warn('Não foi possível ler os dados salvos', e); }
   return null;
 }
@@ -494,8 +652,14 @@ function levelInfo(){
   return {level, cur, next:100};
 }
 function gainXP(n, msg){
+  const before = levelInfo().level;
   state.user.xp += n;
+  touchStreak();
   showToast(msg || `+${n} XP ✨`);
+  const after = levelInfo().level;
+  checkAchievements();
+  checkMissions();
+  if(after > before) setTimeout(()=>showLevelUp(after), 400);
 }
 
 function logHistory(icon, text){
@@ -555,6 +719,8 @@ const TABS = [
   {id:'mais', label:'Mais', icon:'✨'},
 ];
 const MORE_ITEMS = [
+  {id:'saude', label:'Saúde', icon:'💪'},
+  {id:'conquistas', label:'Conquistas', icon:'🏆'},
   {id:'faculdade', label:'Faculdade', icon:'🎓'},
   {id:'trabalho', label:'Trabalho', icon:'💼'},
   {id:'relatorios', label:'Relatórios', icon:'📊'},
@@ -577,21 +743,24 @@ function render(){
     inicio: viewInicio, tarefas: viewTarefas, agenda: viewAgenda,
     faculdade: viewFaculdade, trabalho: viewTrabalho, financas: viewFinancas,
     metas: viewMetas, relatorios: viewRelatorios, config: viewConfig, historico: viewHistorico,
+    saude: viewSaude, conquistas: viewConquistas,
   };
   c.innerHTML = (views[state.tab] || viewInicio)();
+  applyTheme();
+  renderMascotFab();
   saveState();
 }
 
 function renderHeader(){
   const {level, cur} = levelInfo();
-  document.getElementById('levelChip').innerHTML = `<span class="dot">⭐</span> Nível ${level} · ${cur}/100 XP`;
+  document.getElementById('levelChip').innerHTML = `<span class="dot">⭐</span> Nív. ${level}<span class="lc-xp"> · ${cur}/100</span>${streakInfo().count? ` · 🔥${streakInfo().count}`:''}`;
   const av = document.getElementById('avatarBtn');
   if(av){ av.firstChild.nodeValue = (state.user.name||'?').trim().charAt(0).toUpperCase() || '?'; }
   const hour = new Date().getHours();
   const greet = hour < 12 ? 'Bom dia' : hour < 18 ? 'Boa tarde' : 'Boa noite';
   const titles = {
     inicio:null, tarefas:'Tarefas', agenda:'Agenda', faculdade:'Faculdade',
-    trabalho:'Trabalho & Carreira', financas:'Finanças', metas:'Metas', relatorios:'Relatórios', config:'Configurações', historico:'Histórico'
+    trabalho:'Trabalho & Carreira', financas:'Finanças', metas:'Metas', relatorios:'Relatórios', config:'Configurações', historico:'Histórico', saude:'Saúde & Academia', conquistas:'Conquistas'
   };
   const t = titles[state.tab];
   document.getElementById('heroBlock').innerHTML = t ? `
@@ -628,6 +797,7 @@ function viewInicio(){
   const quote = MOTIVATIONAL[state.prefs.motivIndex];
 
   return `
+  ${mascotCard()}
   <div class="grid2">
     <div class="card dash-wide">
       <div class="stat-row">
@@ -733,7 +903,7 @@ function toggleTask(id){
   const t = state.tasks.find(x=>x.id===id);
   if(!t) return;
   t.done = !t.done;
-  if(t.done){ gainXP(10, 'Tarefa concluída! +10 XP 🎉'); logHistory('✅', `Tarefa concluída: "${(t.title)}"`); }
+  if(t.done){ t.doneAt = todayISO(); state.game.stats.tasksDone++; gainXP(10, 'Tarefa concluída! +10 XP 🎉'); logHistory('✅', `Tarefa concluída: "${(t.title)}"`); }
   render();
 }
 function deleteTask(id){
@@ -880,7 +1050,7 @@ function deleteSubject(id){ state.subjects = state.subjects.filter(s=>s.id!==id)
 function toggleAssignment(sid,aid){
   const s = state.subjects.find(x=>x.id===sid); const a = s.assignments.find(x=>x.id===aid);
   a.done = !a.done;
-  if(a.done){ gainXP(15, 'Atividade concluída! +15 XP 🎓'); logHistory('🎓', `Atividade concluída: "${(a.title)}" (${(s.name)})`); }
+  if(a.done){ a.doneAt = todayISO(); gainXP(15, 'Atividade concluída! +15 XP 🎓'); logHistory('🎓', `Atividade concluída: "${(a.title)}" (${(s.name)})`); }
   render();
 }
 function openSubjectForm(){
@@ -1148,7 +1318,7 @@ function bumpGoal(id, delta){
   const g = state.goals.find(x=>x.id===id);
   const old = g.progress;
   g.progress = Math.max(0, Math.min(100, g.progress+delta));
-  if(g.progress===100 && old<100){ gainXP(30, 'Meta concluída! +30 XP 🏆'); logHistory('🏆', `Meta concluída: "${(g.title)}"`); }
+  if(g.progress===100 && old<100){ state.game.stats.goalsDone++; gainXP(30, 'Meta concluída! +30 XP 🏆'); logHistory('🏆', `Meta concluída: "${(g.title)}"`); }
   render();
 }
 function openGoalForm(){
@@ -1305,7 +1475,7 @@ function importData(input){
 }
 async function loadDemo(){
   if(!(await uiConfirm('Carregar dados de exemplo? Seus dados atuais serão substituídos.', 'Carregar'))) return;
-  state = demoState(); render(); showToast('Dados de exemplo carregados 🍓');
+  const nm = state.user.name; state = demoState(); if(nm) state.user.name = nm; render(); showToast('Dados de exemplo carregados 🍓');
 }
 async function resetAll(){
   if(!(await uiConfirm('Apagar TODOS os seus dados? Isso não pode ser desfeito.', 'Apagar tudo', true))) return;
@@ -1318,7 +1488,7 @@ function askName(){
     <p style="font-size:13px; color:var(--text-soft); font-weight:600; margin-bottom:12px;">Como você quer ser chamada(o)? Seus dados ficam salvos só neste aparelho.</p>
     <div class="field"><label>Seu nome</label><input id="ob_name" maxlength="40" placeholder="Ex.: Ana"></div>
     <button class="btn btn-primary btn-block" onclick="finishOnboarding()">Começar ✨</button>
-    <button class="btn btn-ghost btn-block" style="margin-top:8px" onclick="state=demoState(); closeModal(); render();">Só quero ver um exemplo</button>
+    <button class="btn btn-ghost btn-block" style="margin-top:8px" onclick="state=demoState(); state.user.name='Visitante'; closeModal(); render();">Só quero ver um exemplo</button>
   `);
   setTimeout(()=>{ const i=document.getElementById('ob_name'); if(i) i.focus(); }, 50);
 }
@@ -1400,6 +1570,522 @@ if('serviceWorker' in navigator){
 
 
 /* =========================================================
+   ESTADO: mesclagem segura (versões antigas continuam abrindo)
+========================================================= */
+function mergeState(base, saved){
+  const s = {...base, ...saved, tab:'inicio'};
+  s.finance = {...base.finance, ...(saved.finance||{})};
+  s.prefs = {...base.prefs, ...(saved.prefs||{})};
+  s.filters = {...base.filters, ...(saved.filters||{})};
+  s.health = {...base.health, ...(saved.health||{})};
+  s.game = {...base.game, ...(saved.game||{})};
+  s.game.stats = {...base.game.stats, ...((saved.game||{}).stats||{})};
+  s.game.achievements = {...((saved.game||{}).achievements||{})};
+  s.game.missionsDone = {...((saved.game||{}).missionsDone||{})};
+  return s;
+}
+function daysBetween(a, b){ return Math.round((new Date(b+'T12:00') - new Date(a+'T12:00')) / 86400000); }
+
+/* =========================================================
+   GAMIFICAÇÃO: sequência, níveis, conquistas, missões, temas
+========================================================= */
+const LEVEL_TITLES = [[1,'Sementinha','🌱'],[2,'Broto','🌿'],[3,'Florzinha','🌸'],[5,'Moranguinho','🍓'],[7,'Berry Pro','💪'],[10,'Lenda Berry','👑']];
+function levelTitle(level){ let t = LEVEL_TITLES[0]; for(const x of LEVEL_TITLES){ if(level >= x[0]) t = x; } return t; }
+
+function streakInfo(){
+  const g = state.game; if(!g || !g.lastActive) return {count:0, alive:false, today:false};
+  const d = daysBetween(g.lastActive, todayISO());
+  return {count: d <= 1 ? g.streak : 0, alive: d <= 1, today: d === 0};
+}
+function touchStreak(){
+  const g = state.game, t = todayISO();
+  if(g.lastActive === t) return;
+  g.streak = (g.lastActive && daysBetween(g.lastActive, t) === 1) ? g.streak + 1 : 1;
+  g.lastActive = t;
+}
+
+const ACHIEVEMENTS = [
+  {id:'first_task', e:'✅', n:'Primeiro passo', d:'Concluir a primeira tarefa', test:s=>s.game.stats.tasksDone>=1},
+  {id:'tasks_25', e:'🚀', n:'Produtiva', d:'Concluir 25 tarefas', test:s=>s.game.stats.tasksDone>=25},
+  {id:'streak_3', e:'🔥', n:'Pegando ritmo', d:'3 dias seguidos usando o app', test:s=>streakInfo().count>=3},
+  {id:'streak_7', e:'🌟', n:'Semana perfeita', d:'7 dias seguidos', test:s=>streakInfo().count>=7},
+  {id:'streak_30', e:'💎', n:'Imparável', d:'30 dias seguidos', test:s=>streakInfo().count>=30},
+  {id:'workout_1', e:'🏋️', n:'Primeiro treino', d:'Registrar um treino', test:s=>s.game.stats.workouts>=1},
+  {id:'workout_10', e:'💪', n:'Rato de academia', d:'Registrar 10 treinos', test:s=>s.game.stats.workouts>=10},
+  {id:'weigh_5', e:'⚖️', n:'De olho no progresso', d:'Registrar o peso 5 vezes', test:s=>s.game.stats.weighIns>=5},
+  {id:'goal_weight_half', e:'📉', n:'Meio caminho', d:'Chegar à metade da meta de peso', test:s=>healthStats().goalPct>=50},
+  {id:'goal_1', e:'🏆', n:'Meta batida', d:'Concluir uma meta', test:s=>s.game.stats.goalsDone>=1},
+  {id:'voice_1', e:'🎤', n:'Oi, Berry!', d:'Usar o assistente de voz', test:s=>s.game.stats.voice>=1},
+  {id:'saver', e:'🐷', n:'No azul', d:'Fechar o mês com saldo positivo', test:s=>financeTotals().balance>0 && s.finance.transactions.length>=3},
+  {id:'level_5', e:'🍓', n:'Moranguinho', d:'Chegar ao nível 5', test:s=>levelInfo().level>=5},
+  {id:'level_10', e:'👑', n:'Lenda Berry', d:'Chegar ao nível 10', test:s=>levelInfo().level>=10},
+];
+function checkAchievements(){
+  for(const a of ACHIEVEMENTS){
+    if(!state.game.achievements[a.id] && a.test(state)){
+      state.game.achievements[a.id] = todayISO();
+      state.user.xp += 20;
+      logHistory('🏅', `Conquista desbloqueada: ${a.n}`);
+      setTimeout(()=>showToast(`🏅 Conquista: ${a.n}! +20 XP`), 900);
+    }
+  }
+}
+
+const MISSION_POOL = [
+  {id:'tasks3', e:'✅', t:'Concluir 3 tarefas hoje', xp:20, goal:3, prog:s=>s.tasks.filter(t=>t.done && t.doneAt===todayISO()).length},
+  {id:'workout', e:'🏋️', t:'Registrar um treino', xp:25, goal:1, prog:s=>s.health.workouts.filter(w=>w.date===todayISO()).length},
+  {id:'weigh', e:'⚖️', t:'Registrar seu peso', xp:10, goal:1, prog:s=>s.health.weights.filter(w=>w.date===todayISO()).length},
+  {id:'voice', e:'🎤', t:'Adicionar algo falando com o Berry', xp:15, goal:1, prog:s=>(s.game.voiceDay===todayISO()?1:0)},
+  {id:'expense', e:'💰', t:'Anotar um gasto do dia', xp:10, goal:1, prog:s=>s.finance.transactions.filter(t=>t.date===todayISO()).length},
+  {id:'study', e:'🎓', t:'Concluir uma atividade da faculdade', xp:20, goal:1, prog:s=>s.subjects.reduce((n,x)=>n+x.assignments.filter(a=>a.done && a.doneAt===todayISO()).length,0)},
+];
+function todaysMissions(){
+  const d = todayISO(); let seed = 0; for(const c of d) seed = (seed*31 + c.charCodeAt(0)) % 9973;
+  const pool = [...MISSION_POOL]; const out = [MISSION_POOL[0]]; pool.shift();
+  while(out.length < 3){ seed = (seed*7 + 13) % 9973; out.push(pool.splice(seed % pool.length, 1)[0]); }
+  return out.map(m => { const p = Math.min(m.goal, m.prog(state)); return {...m, p, ok: p >= m.goal}; });
+}
+function checkMissions(){
+  const d = todayISO(); const done = state.game.missionsDone[d] || [];
+  for(const m of todaysMissions()){
+    if(m.ok && !done.includes(m.id)){
+      done.push(m.id); state.user.xp += m.xp;
+      logHistory('🎯', `Missão do dia cumprida: ${m.t}`);
+      setTimeout(()=>showToast(`🎯 Missão cumprida! +${m.xp} XP`), 1500);
+    }
+  }
+  state.game.missionsDone[d] = done;
+}
+
+const THEMES = [
+  {id:'morango', n:'Morango', lvl:1, c:'#C2185B'}, {id:'menta', n:'Menta', lvl:3, c:'#16946C'},
+  {id:'lavanda', n:'Lavanda', lvl:5, c:'#7A4FD0'}, {id:'pessego', n:'Pêssego', lvl:7, c:'#E0672B'}, {id:'oceano', n:'Oceano', lvl:10, c:'#1F6FD1'},
+];
+function applyTheme(){
+  const t = (state.game && state.game.theme) || 'morango';
+  if(t === 'morango') document.documentElement.removeAttribute('data-theme'); else document.documentElement.setAttribute('data-theme', t);
+}
+function setTheme(id){
+  const th = THEMES.find(x=>x.id===id); if(!th) return;
+  if(levelInfo().level < th.lvl){ showToast(`🔒 Desbloqueia no nível ${th.lvl}`); return; }
+  state.game.theme = id; render(); showToast(`Tema ${th.n} aplicado 🎨`);
+}
+function showLevelUp(level){
+  const [, name, emo] = levelTitle(level);
+  const theme = THEMES.find(t=>t.lvl===level);
+  const conf = document.createElement('div'); conf.className = 'confetti';
+  conf.innerHTML = Array.from({length:28}, (_, i) => `<i style="left:${Math.random()*100}%;animation-delay:${Math.random()*0.8}s">${['🍓','⭐','🎉','✨','💖'][i%5]}</i>`).join('');
+  document.body.appendChild(conf); setTimeout(()=>conf.remove(), 3500);
+  openModal(`<div class="levelup"><div class="big">${emo}</div><h2>Nível ${level}!</h2>
+    <p style="font-weight:700;color:var(--text-soft);margin:6px 0 14px">Agora você é <b style="color:var(--berry)">${name}</b>.${theme ? ` Tema <b>${theme.n}</b> desbloqueado! 🎨` : ''}</p>
+    <button class="btn btn-primary btn-block" onclick="closeModal(); goTab('conquistas')">Ver conquistas</button></div>`);
+}
+
+/* =========================================================
+   VIEW: CONQUISTAS
+========================================================= */
+function viewConquistas(){
+  const {level, cur} = levelInfo(); const [, name, emo] = levelTitle(level);
+  const st = streakInfo(); const ms = todaysMissions();
+  const unlocked = ACHIEVEMENTS.filter(a=>state.game.achievements[a.id]).length;
+  const nextT = LEVEL_TITLES.find(x=>x[0] > level);
+  return `
+  <div class="grid2">
+    <div class="card">
+      <div class="lvl-hero">
+        <div class="lvl-badge"><b>${level}</b><span>nível</span></div>
+        <div style="flex:1">
+          <h3>${emo} ${name}</h3>
+          <div class="progress-track" style="margin-top:8px"><div class="progress-fill gold" style="width:${cur}%"></div></div>
+          <div class="progress-label"><span>${cur}/100 XP</span><span>${nextT ? `Próximo título: ${nextT[2]} ${nextT[1]} (nív. ${nextT[0]})` : 'Título máximo!'}</span></div>
+        </div>
+      </div>
+      <div class="streak" style="margin-top:14px"><span class="fire">🔥</span><div><div>${st.count} ${st.count===1?'dia':'dias'} seguidos</div>
+        <div style="font-size:12px;color:#9A6A00;font-weight:700">${st.today ? 'Sequência garantida hoje ✔' : st.count ? 'Faça qualquer ação hoje pra não perder a sequência!' : 'Conclua algo hoje pra começar uma sequência'}</div></div></div>
+    </div>
+    <div class="card">
+      <div class="card-title"><h3>🎯 Missões de hoje</h3><span class="muted">renovam todo dia</span></div>
+      ${ms.map(m=>`<div class="mission ${m.ok?'ok':''}"><div class="mi">${m.ok?'✔':m.e}</div>
+        <div class="mt">${m.t}<div class="mp"><i style="width:${Math.round(m.p/m.goal*100)}%"></i></div></div>
+        <div class="xp">+${m.xp} XP</div></div>`).join('')}
+    </div>
+    <div class="card dash-wide">
+      <div class="card-title"><h3>🏅 Conquistas</h3><span class="muted">${unlocked}/${ACHIEVEMENTS.length} desbloqueadas</span></div>
+      <div class="ach-grid">${ACHIEVEMENTS.map(a=>{ const d = state.game.achievements[a.id]; return `
+        <div class="ach ${d?'':'locked'}"><div class="e">${d?a.e:'🔒'}</div><div class="n">${a.n}</div><div class="d">${a.d}</div>${d?`<div class="d" style="color:var(--berry)">${fmtDate(d)}</div>`:''}</div>`; }).join('')}</div>
+    </div>
+    <div class="card dash-wide">
+      <div class="card-title"><h3>🎨 Temas</h3><span class="muted">suba de nível pra liberar</span></div>
+      <div class="themes">${THEMES.map(t=>`<button class="theme-dot ${state.game.theme===t.id?'on':''} ${level<t.lvl?'lock':''}" onclick="setTheme('${t.id}')"><i style="background:${t.c}"></i>${level<t.lvl?'🔒 nív. '+t.lvl:t.n}</button>`).join('')}</div>
+    </div>
+  </div>`;
+}
+
+/* =========================================================
+   MASCOTE BERRY: alertas do que fazer
+========================================================= */
+function mascotSVG(mood, cls=''){
+  const mouth = mood==='worried' ? '<path d="M41 66 Q50 60 59 66" stroke="#5A1630" stroke-width="3" fill="none" stroke-linecap="round"/>'
+             : mood==='party' ? '<path d="M39 60 Q50 74 61 60 Z" fill="#5A1630"/>'
+             : '<path d="M40 61 Q50 70 60 61" stroke="#5A1630" stroke-width="3" fill="none" stroke-linecap="round"/>';
+  const brows = mood==='worried' ? '<path d="M33 43 L42 40 M67 43 L58 40" stroke="#5A1630" stroke-width="2.5" stroke-linecap="round"/>' : '';
+  return `<svg class="mascot-svg ${cls}" viewBox="0 0 100 100" aria-hidden="true">
+    <path d="M50 22 C24 22 12 38 14 55 C17 76 34 92 50 94 C66 92 83 76 86 55 C88 38 76 22 50 22Z" fill="#EC3B5C"/>
+    <path d="M50 22 C34 22 22 30 18 42 C30 34 42 33 50 33 C58 33 70 34 82 42 C78 30 66 22 50 22Z" fill="#FF6B84" opacity=".55"/>
+    <g fill="#FFE29A">${[[30,50],[70,50],[25,66],[75,66],[38,80],[62,80],[50,86]].map(([x,y])=>`<ellipse cx="${x}" cy="${y}" rx="2" ry="3"/>`).join('')}</g>
+    <path d="M50 26 C44 14 32 12 24 16 C32 18 38 22 41 27 C34 25 27 27 22 32 C32 33 42 31 50 28 C58 31 68 33 78 32 C73 27 66 25 59 27 C62 22 68 18 76 16 C68 12 56 14 50 26Z" fill="#43B97F"/>
+    ${brows}
+    <ellipse cx="38" cy="50" rx="5.5" ry="6.5" fill="#fff"/><ellipse cx="62" cy="50" rx="5.5" ry="6.5" fill="#fff"/>
+    <circle cx="39" cy="51" r="3.4" fill="#2B0F1C"/><circle cx="63" cy="51" r="3.4" fill="#2B0F1C"/>
+    <circle cx="40.2" cy="49.6" r="1.1" fill="#fff"/><circle cx="64.2" cy="49.6" r="1.1" fill="#fff"/>
+    <ellipse cx="29" cy="60" rx="5" ry="3" fill="#FF9DB0" opacity=".8"/><ellipse cx="71" cy="60" rx="5" ry="3" fill="#FF9DB0" opacity=".8"/>
+    ${mouth}</svg>`;
+}
+
+function computeAlerts(){
+  const t = todayISO(), al = [];
+  const overdue = state.tasks.filter(x=>!x.done && x.due < t);
+  const dueToday = state.tasks.filter(x=>!x.done && x.due === t);
+  if(overdue.length) al.push({lv:3, e:'⏰', msg:`Você tem ${overdue.length} tarefa(s) atrasada(s). A mais antiga: "${overdue.sort((a,b)=>a.due.localeCompare(b.due))[0].title}".`, tab:'tarefas', btn:'Ver tarefas'});
+  const evToday = state.events.filter(e=>e.date===t).sort((a,b)=>a.time.localeCompare(b.time));
+  const now = new Date().toTimeString().slice(0,5);
+  const nextEv = evToday.find(e=>e.time >= now);
+  if(nextEv) al.push({lv:2, e:'📅', msg:`Hoje às ${nextEv.time}: ${nextEv.title}.`, tab:'agenda', btn:'Ver agenda'});
+  const soon = [];
+  state.subjects.forEach(s=>s.assignments.forEach(a=>{ if(!a.done){ const d = daysBetween(t, a.date); if(d>=0 && d<=3) soon.push({...a, subj:s.name, d}); } }));
+  soon.sort((a,b)=>a.d-b.d);
+  if(soon.length){ const a = soon[0]; al.push({lv: a.d<=1?3:2, e: a.type==='prova'?'📝':'🎓', msg:`${a.type==='prova'?'Prova':'Entrega'} de ${a.subj} ${a.d===0?'é hoje':a.d===1?'é amanhã':'em '+a.d+' dias'}: "${a.title}". Bora revisar?`, tab:'faculdade', btn:'Ver faculdade'}); }
+  if(dueToday.length) al.push({lv:2, e:'✅', msg:`Faltam ${dueToday.length} tarefa(s) pra hoje. Comece por "${(dueToday.find(x=>x.priority==='alta')||dueToday[0]).title}".`, tab:'tarefas', btn:'Ver tarefas'});
+  const st = streakInfo();
+  if(st.count >= 2 && !st.today) al.push({lv:2, e:'🔥', msg:`Sua sequência de ${st.count} dias está em risco! Conclua qualquer coisa hoje pra manter.`, tab:'conquistas', btn:'Ver missões'});
+  const h = state.health, wk = workoutsThisWeek();
+  if(h.weeklyWorkouts){ const left = h.weeklyWorkouts - wk.length; const dow = (new Date().getDay()+6)%7; if(left > 0 && !h.workouts.some(w=>w.date===t)) al.push({lv: left > (7-dow) - 1 ? 2 : 1, e:'🏋️', msg:`Faltam ${left} treino(s) pra bater sua meta da semana (${h.weeklyWorkouts}). Que tal hoje?`, tab:'saude', btn:'Registrar treino'}); }
+  if(h.goalKg){ const last = h.weights.length ? [...h.weights].sort((a,b)=>b.date.localeCompare(a.date))[0] : null; if(!last || daysBetween(last.date, t) >= 7) al.push({lv:1, e:'⚖️', msg:'Faz uma semana que você não registra o peso. Que tal se pesar hoje?', tab:'saude', btn:'Registrar peso'}); }
+  state.goals.forEach(g=>{ if(g.progress<100){ const d = daysBetween(t, g.deadline); if(d>=0 && d<=7) al.push({lv:1, e:'🎯', msg:`A meta "${g.title}" vence em ${d} dia(s) e está em ${g.progress}%.`, tab:'metas', btn:'Ver metas'}); } });
+  const ms = todaysMissions().filter(m=>!m.ok);
+  if(ms.length) al.push({lv:0, e:'🎯', msg:`Missão do dia: ${ms[0].t} (+${ms[0].xp} XP).`, tab:'conquistas', btn:'Ver missões'});
+  if(!al.length) al.push({lv:0, e:'🎉', msg:'Tudo em dia por aqui! Aproveita pra adiantar uma meta ou descansar um pouco.', tab:'metas', btn:'Ver metas'});
+  return al.sort((a,b)=>b.lv-a.lv);
+}
+function mascotMood(al){ return al[0].lv>=3 ? 'worried' : al[0].e==='🎉' ? 'party' : 'happy'; }
+function mascotCard(){
+  const al = computeAlerts(); const i = (state.alertIndex||0) % al.length; const a = al[i];
+  return `<div class="mascot-card">${mascotSVG(mascotMood(al))}
+    <div class="bubble"><div class="who">Berry</div>${al.length>1?`<div class="count">${i+1}/${al.length}</div>`:''}
+      <div class="msg">${esc(a.msg)}</div>
+      <div class="acts"><button class="btn btn-primary btn-sm" onclick="goTab('${a.tab}')">${a.btn}</button>
+      ${al.length>1?`<button class="btn btn-ghost btn-sm" onclick="nextAlert()">Próximo aviso ›</button>`:''}
+      <button class="btn btn-ghost btn-sm" onclick="openVoice()">🎤 Falar</button></div>
+    </div></div>`;
+}
+function nextAlert(){ state.alertIndex = (state.alertIndex||0) + 1; render(); }
+function renderMascotFab(){
+  const f = document.getElementById('mascotFab'); if(!f) return;
+  if(state.tab === 'inicio' || !document.getElementById('authRoot') || document.getElementById('authRoot').classList.contains('show')){ f.style.display = 'none'; return; }
+  const al = computeAlerts(); const n = al.filter(a=>a.lv>=2).length;
+  f.style.display = ''; f.innerHTML = mascotSVG(mascotMood(al), 'small') + (n ? `<span class="badge">${n}</span>` : '');
+}
+function openAlerts(){
+  const al = computeAlerts();
+  openModal(`<div class="sheet-title"><h3>🍓 Avisos do Berry</h3><button class="close-x" onclick="closeModal()">✕</button></div>
+    ${al.map(a=>`<div class="alert-item"><div class="ic">${a.e}</div><div style="flex:1"><div class="t ${a.lv>=3?'lv-alta':''}">${esc(a.msg)}</div>
+      <button class="btn btn-ghost btn-sm" style="margin-top:6px" onclick="closeModal(); goTab('${a.tab}')">${a.btn}</button></div></div>`).join('')}
+    <button class="btn btn-primary btn-block" style="margin-top:10px" onclick="closeModal(); openVoice()">🎤 Falar com o Berry</button>`);
+}
+
+/* =========================================================
+   SAÚDE & ACADEMIA
+========================================================= */
+const WORKOUT_TYPES = {musculacao:['🏋️','Musculação'], corrida:['🏃','Corrida'], caminhada:['🚶','Caminhada'], bike:['🚴','Bike'], funcional:['🔥','Funcional'], yoga:['🧘','Yoga'], natacao:['🏊','Natação']};
+function weekStartISO(){ const d = new Date(); const dow = (d.getDay()+6)%7; d.setDate(d.getDate()-dow); d.setMinutes(d.getMinutes()-d.getTimezoneOffset()); return d.toISOString().slice(0,10); }
+function workoutsThisWeek(){ const ws = weekStartISO(); return state.health.workouts.filter(w=>w.date >= ws && w.date <= todayISO()); }
+function healthStats(){
+  const h = state.health; const ws = [...h.weights].sort((a,b)=>a.date.localeCompare(b.date));
+  const cur = ws.length ? ws[ws.length-1].kg : null, start = ws.length ? ws[0].kg : null;
+  const lost = cur!=null ? +(start-cur).toFixed(1) : 0;
+  const totalToLose = (start!=null && h.goalKg) ? start - h.goalKg : 0;
+  const goalPct = totalToLose > 0 ? Math.max(0, Math.min(100, Math.round(lost/totalToLose*100))) : 0;
+  const bmi = (cur && h.heightCm) ? +(cur / Math.pow(h.heightCm/100, 2)).toFixed(1) : null;
+  return {ws, cur, start, lost, goalPct, bmi};
+}
+function weightChart(ws, goal){
+  const pts = ws.slice(-14); if(pts.length < 2) return emptyState('⚖️','Registre o peso pelo menos 2 vezes pra ver o gráfico');
+  const W=1000,H=260,L=46,R=16,T=18,B=34;
+  const vals = pts.map(p=>p.kg).concat(goal?[goal]:[]); let mn = Math.min(...vals)-1, mx = Math.max(...vals)+1;
+  const x = i => L + i*(W-L-R)/(pts.length-1), y = v => T + (mx-v)*(H-T-B)/(mx-mn);
+  const line = pts.map((p,i)=>`${i?'L':'M'}${x(i).toFixed(1)},${y(p.kg).toFixed(1)}`).join(' ');
+  const area = line + ` L${x(pts.length-1).toFixed(1)},${H-B} L${L},${H-B} Z`;
+  const ticks = [mn, (mn+mx)/2, mx].map(v=>`<text x="${L-8}" y="${y(v)+4}" text-anchor="end" font-size="11" fill="#9C7387">${v.toFixed(1)}</text><line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="#F3DCE5" stroke-width="1"/>`).join('');
+  const labels = pts.map((p,i)=> (i===0||i===pts.length-1||i%3===0) ? `<text x="${x(i)}" y="${H-12}" text-anchor="middle" font-size="11" fill="#9C7387">${p.date.slice(8,10)}/${p.date.slice(5,7)}</text>` : '').join('');
+  const g = goal ? `<line x1="${L}" x2="${W-R}" y1="${y(goal)}" y2="${y(goal)}" stroke="#7FCBA4" stroke-width="2" stroke-dasharray="6 5"/><text x="${W-R}" y="${y(goal)-6}" text-anchor="end" font-size="11.5" font-weight="700" fill="#2E8F5E">meta ${goal} kg</text>` : '';
+  return `<div class="chart-wrap"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Gráfico do peso nas últimas pesagens">${ticks}${g}
+    <path d="${area}" fill="var(--berry-light)" opacity=".45"/><path d="${line}" fill="none" stroke="var(--berry)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+    ${pts.map((p,i)=>`<circle cx="${x(i)}" cy="${y(p.kg)}" r="${i===pts.length-1?5:3.5}" fill="#fff" stroke="var(--berry)" stroke-width="2.5"/>`).join('')}${labels}</svg></div>`;
+}
+function viewSaude(){
+  const h = state.health, hs = healthStats(), wk = workoutsThisWeek();
+  const mins = wk.reduce((n,w)=>n+(+w.minutes||0),0);
+  const ws = weekStartISO(); const days = ['S','T','Q','Q','S','S','D'];
+  const dots = days.map((d,i)=>{ const dt = new Date(ws+'T12:00'); dt.setDate(dt.getDate()+i); const iso = dt.toISOString().slice(0,10); const on = h.workouts.some(w=>w.date===iso); return `<span class="${on?'on':''} ${iso===todayISO()?'today':''}"><i></i>${d}</span>`; }).join('');
+  const recent = [...h.workouts].sort((a,b)=>b.date.localeCompare(a.date)).slice(0,6);
+  return `
+  <div class="grid2">
+    <div class="card">
+      <div class="card-title"><h3>⚖️ Peso</h3><button class="btn btn-primary btn-sm" onclick="openWeightForm()">+ Registrar</button></div>
+      <div class="stat3">
+        <div class="sb"><b>${hs.cur!=null?hs.cur.toFixed(1):'—'}</b><span>kg atual</span></div>
+        <div class="sb"><b>${hs.lost>0?'-'+hs.lost:hs.lost<0?'+'+Math.abs(hs.lost):'0'}</b><span>kg desde o início</span></div>
+        <div class="sb"><b>${h.goalKg||'—'}</b><span>kg meta</span></div>
+      </div>
+      ${h.goalKg ? `<div class="progress-track" style="margin-top:12px"><div class="progress-fill" style="width:${hs.goalPct}%"></div></div><div class="progress-label"><span>Progresso da meta</span><span>${hs.goalPct}%</span></div>` : ''}
+      ${hs.bmi ? `<p style="font-size:12.5px;color:var(--text-soft);font-weight:700;margin-top:6px">IMC atual: ${hs.bmi}</p>` : ''}
+    </div>
+    <div class="card">
+      <div class="card-title"><h3>🏋️ Treinos da semana</h3><button class="btn btn-primary btn-sm" onclick="openWorkoutForm()">+ Treino</button></div>
+      <div class="stat3">
+        <div class="sb"><b>${wk.length}/${h.weeklyWorkouts||0}</b><span>treinos</span></div>
+        <div class="sb"><b>${mins}</b><span>minutos</span></div>
+        <div class="sb"><b>${state.game.stats.workouts}</b><span>no total</span></div>
+      </div>
+      <div class="wk-dots">${dots}</div>
+    </div>
+    <div class="card dash-wide">
+      <div class="card-title"><h3>📉 Evolução do peso</h3><span class="muted" style="cursor:pointer" onclick="openHealthGoals()">⚙️ metas</span></div>
+      ${weightChart(hs.ws, h.goalKg)}
+    </div>
+    <div class="card dash-wide">
+      <div class="card-title"><h3>📋 Últimos treinos</h3></div>
+      ${recent.length ? `<div class="list">${recent.map(w=>{ const [e,n] = WORKOUT_TYPES[w.type]||['💪',w.type]; return `
+        <div class="item"><div style="font-size:22px">${e}</div><div class="item-body"><div class="item-title">${n}${w.notes?' · '+esc(w.notes):''}</div>
+        <div class="item-meta"><span class="tag" style="background:#F8EEF2;color:var(--text-soft)">📆 ${fmtDate(w.date)}</span><span class="tag tag-pessoal">⏱️ ${+w.minutes||0} min</span></div></div>
+        <div class="item-actions"><button class="icon-btn" onclick="deleteWorkout('${w.id}')">🗑️</button></div></div>`; }).join('')}</div>` : emptyState('🏋️','Nenhum treino registrado ainda')}
+    </div>
+  </div>`;
+}
+function openWeightForm(){
+  openModal(`<div class="sheet-title"><h3>⚖️ Registrar peso</h3><button class="close-x" onclick="closeModal()">✕</button></div>
+    <div class="field-row"><div class="field"><label>Peso (kg)</label><input id="f_kg" type="number" step="0.1" inputmode="decimal" placeholder="Ex: 68.4"></div>
+    <div class="field"><label>Data</label><input id="f_kgdate" type="date" value="${todayISO()}"></div></div>
+    <button class="btn btn-primary btn-block" onclick="submitWeight()">Salvar</button>`);
+}
+function addWeight(kg, date){
+  state.health.weights = state.health.weights.filter(w=>w.date!==date);
+  state.health.weights.push({id:uid(), date, kg});
+  state.game.stats.weighIns++; logHistory('⚖️', `Peso registrado: ${kg} kg`);
+  gainXP(5, 'Peso registrado! +5 XP ⚖️');
+}
+function submitWeight(){
+  const kg = parseFloat(String(document.getElementById('f_kg').value).replace(',','.'));
+  if(!(kg>20 && kg<400)){ showToast('Digite um peso válido ⚖️'); return; }
+  addWeight(+kg.toFixed(1), document.getElementById('f_kgdate').value || todayISO()); closeModal(); render();
+}
+function openWorkoutForm(){
+  openModal(`<div class="sheet-title"><h3>🏋️ Novo treino</h3><button class="close-x" onclick="closeModal()">✕</button></div>
+    <div class="field-row"><div class="field"><label>Tipo</label><select id="f_wtype">${Object.entries(WORKOUT_TYPES).map(([k,[e,n]])=>`<option value="${k}">${e} ${n}</option>`).join('')}</select></div>
+    <div class="field"><label>Duração (min)</label><input id="f_wmin" type="number" inputmode="numeric" value="45"></div></div>
+    <div class="field-row"><div class="field"><label>Data</label><input id="f_wdate" type="date" value="${todayISO()}"></div>
+    <div class="field"><label>Observação</label><input id="f_wnote" maxlength="60" placeholder="Ex: Treino de pernas"></div></div>
+    <button class="btn btn-primary btn-block" onclick="submitWorkout()">Salvar treino</button>`);
+}
+function addWorkout(type, minutes, date, notes){
+  state.health.workouts.push({id:uid(), type, minutes, date, notes: notes||''});
+  state.game.stats.workouts++; const [, n] = WORKOUT_TYPES[type]||['',type];
+  logHistory('🏋️', `Treino registrado: ${n} (${minutes} min)`);
+  gainXP(15, 'Treino registrado! +15 XP 💪');
+}
+function submitWorkout(){
+  const min = parseInt(document.getElementById('f_wmin').value, 10);
+  if(!(min>0 && min<600)){ showToast('Informe a duração em minutos ⏱️'); return; }
+  addWorkout(document.getElementById('f_wtype').value, min, document.getElementById('f_wdate').value || todayISO(), document.getElementById('f_wnote').value.trim());
+  closeModal(); render();
+}
+function deleteWorkout(id){ state.health.workouts = state.health.workouts.filter(w=>w.id!==id); render(); }
+function openHealthGoals(){
+  const h = state.health;
+  openModal(`<div class="sheet-title"><h3>⚙️ Metas de saúde</h3><button class="close-x" onclick="closeModal()">✕</button></div>
+    <div class="field-row"><div class="field"><label>Meta de peso (kg)</label><input id="f_gkg" type="number" step="0.1" value="${h.goalKg||''}"></div>
+    <div class="field"><label>Altura (cm)</label><input id="f_hcm" type="number" value="${h.heightCm||''}"></div></div>
+    <div class="field"><label>Treinos por semana</label><input id="f_wpw" type="number" min="0" max="14" value="${h.weeklyWorkouts||3}"></div>
+    <p style="font-size:12px;color:var(--text-soft);font-weight:600;margin-bottom:12px">Dica: metas graduais são mais saudáveis e fáceis de manter. Em caso de dúvida, converse com um profissional de saúde.</p>
+    <button class="btn btn-primary btn-block" onclick="saveHealthGoals()">Salvar</button>`);
+}
+function saveHealthGoals(){
+  const h = state.health;
+  h.goalKg = parseFloat(document.getElementById('f_gkg').value) || 0;
+  h.heightCm = parseInt(document.getElementById('f_hcm').value, 10) || 0;
+  h.weeklyWorkouts = Math.max(0, Math.min(14, parseInt(document.getElementById('f_wpw').value, 10) || 0));
+  closeModal(); render(); showToast('Metas salvas 💪');
+}
+
+/* =========================================================
+   ASSISTENTE DE VOZ: transcrição + interpretação + confirmação
+========================================================= */
+let voiceRec = null, voiceParsed = null;
+function openVoice(){
+  const hasSR = !!(window.SpeechRecognition || window.webkitSpeechRecognition);
+  voiceParsed = null;
+  openModal(`<div class="sheet-title"><h3>🎤 Fale com o Berry</h3><button class="close-x" onclick="stopVoice(); closeModal()">✕</button></div>
+    ${hasSR ? `<button class="mic-big" id="micBig" onclick="toggleVoice()">🎤</button><p style="text-align:center;font-weight:800;color:var(--text-soft);font-size:13px" id="micHint">Toque e fale</p>`
+            : `<p style="font-size:13px;font-weight:700;color:var(--text-soft)">Seu navegador não tem reconhecimento de voz. Escreva abaixo que o Berry entende do mesmo jeito.</p>`}
+    <div class="transcript" id="voiceText"><span class="interim">${hasSR?'O que você falar aparece aqui…':''}</span></div>
+    <div class="field"><input id="voiceInput" placeholder="ou escreva: amanhã prova de banco às 19h" onkeydown="if(event.key==='Enter') interpretVoice(this.value)"></div>
+    <div id="voiceResult"><p class="examples"><b>Exemplos:</b> “amanhã tenho prova de banco de dados às 19h” · “gastei 35 reais no mercado” · “treinei 50 minutos de musculação” · “pesei 67,8 quilos” · “preciso entregar o relatório na sexta” · “recebi 300 reais de freela”</p></div>`);
+  if(hasSR) setTimeout(toggleVoice, 250);
+}
+function toggleVoice(){
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition; if(!SR) return;
+  if(voiceRec){ stopVoice(); return; }
+  voiceRec = new SR(); voiceRec.lang = 'pt-BR'; voiceRec.interimResults = true; voiceRec.continuous = false;
+  let finalText = '';
+  voiceRec.onresult = (ev) => {
+    let interim = ''; finalText = '';
+    for(const r of ev.results){ if(r.isFinal) finalText += r[0].transcript; else interim += r[0].transcript; }
+    const box = document.getElementById('voiceText'); if(box) box.innerHTML = `${esc(finalText)}<span class="interim">${esc(interim)}</span>`;
+  };
+  voiceRec.onerror = (e) => { const hint = document.getElementById('micHint'); if(hint) hint.textContent = e.error === 'not-allowed' ? 'Permita o microfone no navegador' : 'Não entendi, tente de novo'; };
+  voiceRec.onend = () => { const b = document.getElementById('micBig'); if(b) b.classList.remove('on'); const hint = document.getElementById('micHint'); if(hint && hint.textContent==='Ouvindo…') hint.textContent = 'Toque pra falar de novo'; voiceRec = null; if(finalText.trim()) interpretVoice(finalText); };
+  try { voiceRec.start(); const b = document.getElementById('micBig'); if(b) b.classList.add('on'); const hint = document.getElementById('micHint'); if(hint) hint.textContent = 'Ouvindo…'; } catch(e){ voiceRec = null; }
+}
+function stopVoice(){ if(voiceRec){ try{ voiceRec.stop(); }catch(e){} } }
+
+async function interpretVoice(text){
+  text = (text||'').trim(); if(!text) return;
+  const box = document.getElementById('voiceText'); if(box) box.textContent = text;
+  const res = document.getElementById('voiceResult'); if(res) res.innerHTML = '<p class="examples">🍓 Berry está pensando…</p>';
+  let parsed = null, src = 'regras';
+  const ai = await aiInterpret(text);
+  if(ai && ai.type){ parsed = ai; src = 'ia'; }
+  if(!parsed) parsed = localInterpret(text);
+  voiceParsed = parsed; showParsed(parsed, src);
+}
+async function aiInterpret(text){
+  try {
+    if(!Cloud.client || !Cloud.user || !CFG.AI_FUNCTION) return null;
+    const ctrl = new AbortController(); const tm = setTimeout(()=>ctrl.abort(), 7000);
+    const { data: sess } = await Cloud.client.auth.getSession();
+    const r = await fetch(`${CFG.SUPABASE_URL}/functions/v1/${CFG.AI_FUNCTION}`, { method:'POST', signal: ctrl.signal,
+      headers:{ 'Content-Type':'application/json', 'Authorization':'Bearer ' + sess.session.access_token, 'apikey': CFG.SUPABASE_ANON_KEY },
+      body: JSON.stringify({ text, today: todayISO(), weekday: new Date().toLocaleDateString('pt-BR',{weekday:'long'}) }) });
+    clearTimeout(tm); if(!r.ok) return null;
+    const j = await r.json(); return normalizeParsed(j);
+  } catch(e){ return null; }
+}
+function normalizeParsed(j){
+  if(!j || !j.type) return null;
+  const ok = ['tarefa','evento','gasto','entrada','treino','peso','meta']; if(!ok.includes(j.type)) return null;
+  return { type:j.type, title: String(j.title||'').slice(0,120), date: /^\d{4}-\d{2}-\d{2}$/.test(j.date||'') ? j.date : todayISO(),
+    time: /^\d{2}:\d{2}$/.test(j.time||'') ? j.time : '', amount: +j.amount || 0, category: j.category || '', minutes: +j.minutes || 0,
+    workout: WORKOUT_TYPES[j.workout] ? j.workout : 'musculacao', kg: +j.kg || 0, priority: ['alta','media','baixa'].includes(j.priority) ? j.priority : 'media' };
+}
+
+/* ---- interpretador local (sem internet / sem IA) ---- */
+const NUM_WORDS = {um:1,uma:1,dois:2,duas:2,'três':3,tres:3,quatro:4,cinco:5,seis:6,sete:7,oito:8,nove:9,dez:10,onze:11,doze:12,treze:13,quatorze:14,catorze:14,quinze:15,dezesseis:16,dezessete:17,dezoito:18,dezenove:19,vinte:20,trinta:30,quarenta:40,cinquenta:50,sessenta:60,setenta:70,oitenta:80,noventa:90,cem:100,cento:100,duzentos:200,trezentos:300,quinhentos:500,mil:1000,meia:30};
+function wordsToNumbers(t){
+  return t.replace(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))((?:(?:um|uma|dois|duas|três|tres|quatro|cinco|seis|sete|oito|nove|dez|onze|doze|treze|quatorze|catorze|quinze|dezesseis|dezessete|dezoito|dezenove|vinte|trinta|quarenta|cinquenta|sessenta|setenta|oitenta|noventa|cem|cento|duzentos|trezentos|quinhentos|mil)(?:\s+e\s+|\s+)?)+)(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))/giu, m => {
+    let total = 0, cur = 0;
+    const parts = [];
+    m.trim().split(/\s+e\s+|\s+/).forEach(w => { const v = NUM_WORDS[w.toLowerCase()]; if(v===undefined) return;
+      if(v===1000){ total += (cur||1)*1000; cur = 0; return; }
+      if(v>=10 && v<100 && (cur%100)!==0 && (cur%10)!==0 || (v<100 && cur%100>=10 && v>=10 && cur%10===0 && cur%100!==0)){ parts.push(total+cur); total = 0; cur = v; return; }
+      cur += v; });
+    parts.push(total + cur);
+    return parts.join(' ') + ' ';
+  });
+}
+function localInterpret(raw){
+  let t = ' ' + wordsToNumbers(raw.toLowerCase()) + ' ';
+  const out = { type:'tarefa', title:'', date: todayISO(), time:'', amount:0, category:'', minutes:0, workout:'musculacao', kg:0, priority:'media' };
+  // data
+  const wd = ['domingo','segunda','terça','quarta','quinta','sexta','sábado'];
+  const wdAlt = {terca:2,sabado:6};
+  if(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))depois de amanh[ãa](?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))/u.test(t)){ out.date = addDays(2); t = t.replace(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))depois de amanh[ãa](?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))/u,' '); }
+  else if(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))amanh[ãa](?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))/u.test(t)){ out.date = addDays(1); t = t.replace(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))amanh[ãa](?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))/u,' '); }
+  else if(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))hoje(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))/u.test(t)){ t = t.replace(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))hoje(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))/u,' '); }
+  else {
+    let m = t.match(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))(?:na |no |nesta |neste |próxima |proxima |próximo |proximo )?(domingo|segunda|ter[çc]a|quarta|quinta|sexta|s[áa]bado)(?:-feira| feira)?(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))/u);
+    if(m){ let k = wd.indexOf(m[1]); if(k<0) k = wdAlt[m[1].normalize('NFD').replace(/[̀-ͯ]/g,'')] ?? wd.findIndex(x=>x.normalize('NFD').replace(/[̀-ͯ]/g,'')===m[1].normalize('NFD').replace(/[̀-ͯ]/g,''));
+      const cur = new Date().getDay(); let d = (k - cur + 7) % 7; if(d===0) d = 7; out.date = addDays(d); t = t.replace(m[0],' '); }
+    m = t.match(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))dia (\d{1,2})(?:\/(\d{1,2}))?(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))/u) || t.match(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))(\d{1,2})\/(\d{1,2})(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))/u);
+    if(m){ const now = new Date(); let mo = m[2] ? +m[2]-1 : now.getMonth(); let dt = new Date(now.getFullYear(), mo, +m[1]); if(dt < new Date(now.toDateString())) dt.setMonth(dt.getMonth() + (m[2]?12:1)); dt.setMinutes(dt.getMinutes()-dt.getTimezoneOffset()); out.date = dt.toISOString().slice(0,10); t = t.replace(m[0],' '); }
+  }
+  // hora
+  let hm = t.match(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))(?:às|as|a partir das|ao meio)?\s*(\d{1,2})(?::|h| horas? e |h)(\d{2})(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))/u) || t.match(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))(?:às|as)\s*(\d{1,2})\s*(?:h|horas?)?(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))/u) || t.match(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))(\d{1,2})\s*(?:h|horas)(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))/u) || t.match(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))(\d{1,2})\s+da\s+(manhã|manha|tarde|noite)(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))/u);
+  if(hm && !/reais|r\$|minutos?|min(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))|quilos?|kg/u.test(hm[0])){
+    let h = +hm[1], mi = (hm[2] && /^\d+$/.test(hm[2])) ? +hm[2] : 0;
+    const per = (t.match(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))(?:da|de)\s+(tarde|noite)(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))/u)||[])[1] || (hm[2] && !/^\d+$/.test(hm[2]) ? hm[2] : '');
+    if((per==='tarde' || per==='noite') && h < 12) h += 12;
+    if(h < 24 && mi < 60){ out.time = String(h).padStart(2,'0') + ':' + String(mi).padStart(2,'0'); t = t.replace(hm[0],' ').replace(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))(?:da|de)\s+(manhã|manha|tarde|noite)(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))/u,' '); }
+  }
+  // dinheiro
+  const mm = t.match(/r\$\s*(\d+(?:[.,]\d{1,2})?)/) || t.match(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))(\d+(?:[.,]\d{1,2})?)\s*(?:reais|real|conto|contos|pila)(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))/u);
+  if(mm){ out.amount = parseFloat(mm[1].replace(',','.')); t = t.replace(mm[0],' '); }
+  else if(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))(gastei|paguei|comprei|recebi|ganhei)(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))/u.test(t)){ const m2 = t.match(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))(\d+)(?:\s+e)?\s+(\d{2})(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))(?!\s*(?:minutos?|min|h|horas?|quilos?|kg))/u) || t.match(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))(\d+(?:[.,]\d{1,2})?)(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))(?!\s*(?:minutos?|min|h|horas?|quilos?|kg|\/))/u); if(m2){ out.amount = m2[2] ? parseFloat(m2[1]+'.'+m2[2]) : parseFloat(m2[1].replace(',','.')); t = t.replace(m2[0],' '); } }
+  const kgm = t.match(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))(\d{2,3}(?:[.,]\d{1,2})?)\s*(?:quilos?|kg|kilos?)(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))/u) || t.match(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))(\d{2,3})\s+(?:e|vírgula|virgula)\s+(\d)(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))/u);
+  const minm = t.match(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))(\d{1,3})\s*(?:minutos?|min)(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))/u) || t.match(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))(\d)\s*(?:hora|horas)(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))(?! da)/u);
+  // tipo
+  const has = re => re.test(t);
+  if(has(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))(gastei|paguei|comprei|gasto)(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))/u) && out.amount){ out.type = 'gasto'; }
+  else if(has(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))(recebi|ganhei|entrou|caiu)(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))/u) && out.amount){ out.type = 'entrada'; }
+  else if(has(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))(pesei|me pesei|pesando|peso|estou com)(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))/u) && kgm){ out.type = 'peso'; out.kg = parseFloat(kgm[2] ? kgm[1]+'.'+kgm[2] : kgm[1].replace(',','.')); }
+  else if(has(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))(treinei|treino|academia|musculação|musculacao|corri|corrida|caminhei|caminhada|pedalei|bike|yoga|nadei|natação|funcional)(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))/u) && (minm || has(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))(treinei|corri|caminhei|pedalei|nadei)(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))/u))){ out.type = 'treino'; out.minutes = minm ? (/hora/.test(minm[0]) ? +minm[1]*60 : +minm[1]) : 45; }
+  else if(has(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))(meta|objetivo|quero conseguir)(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))/u)){ out.type = 'meta'; out.date = out.date === todayISO() ? addDays(30) : out.date; }
+  else if(out.time || has(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))(prova|reunião|reuniao|aula|consulta|aniversário|aniversario|evento|encontro|show|palestra|entrevista|dentista|médico|medico)(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))/u)){ out.type = 'evento'; }
+  // categoria / subtipo
+  if(out.type==='gasto'){ const cats = [[/mercado|supermercado|padaria|ifood|restaurante|lanche|almoço|almoco|jantar|pizza|café|cafe/,'Alimentação'],[/uber|99|ônibus|onibus|gasolina|combustível|combustivel|metrô|metro|estacionamento/,'Transporte'],[/farmácia|farmacia|remédio|remedio|médico|medico|academia/,'Saúde'],[/luz|água|agua|internet|aluguel|celular|conta/,'Contas'],[/cinema|show|bar|festa|jogo|netflix|spotify/,'Lazer'],[/livro|curso|faculdade|xerox|apostila/,'Educação'],[/roupa|sapato|tênis|tenis|shopping/,'Compras']]; out.category = (cats.find(([re])=>re.test(t))||[0,'Outros'])[1]; }
+  if(out.type==='entrada') out.category = /sal[áa]rio/.test(t) ? 'Renda' : /freela|freelance|projeto|cliente/.test(t) ? 'Freela' : 'Extra';
+  if(out.type==='treino'){ const w = [[/corri|corrida/,'corrida'],[/caminh/,'caminhada'],[/pedal|bike|bicicleta/,'bike'],[/yoga/,'yoga'],[/nad|nata/,'natacao'],[/funcional|crossfit/,'funcional']]; out.workout = (w.find(([re])=>re.test(t))||[0,'musculacao'])[1]; }
+  if(out.type==='evento') out.category = /prova|aula|faculdade|trabalho de|seminário|seminario|palestra/.test(t) ? 'academico' : /reunião|reuniao|cliente|entrevista|trabalho/.test(t) ? 'profissional' : 'pessoal';
+  if(out.type==='tarefa'){ out.category = /faculdade|prova|trabalho de|estudar|resumo|lista|exercício|exercicio|tcc/.test(t) ? 'faculdade' : /cliente|relatório|relatorio|reunião|reuniao|chefe|projeto|email|e-mail/.test(t) ? 'trabalho' : /pagar|boleto|conta|fatura/.test(t) ? 'financeiro' : 'pessoal';
+    out.priority = /urgente|importante|sem falta|prioridade/.test(t) ? 'alta' : 'media'; }
+  // título
+  let title = t.replace(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))(eu|tenho que|tenho|preciso|preciso de|lembrar de|me lembra de|me lembre de|não esquecer de|vou|vai ter|tem|uma|um|o|a|de novo|por favor|berry|anota|anote|às|as|adiciona|adicione|coloca|coloque|urgente|sem falta|gastei|paguei|comprei|recebi|ganhei|treinei|pesei|me pesei|estou com|minha meta é|minha meta e|meta de|quero)(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))/gu,' ')
+    .replace(/(?:(?<![\p{L}\d])(?=[\p{L}\d])|(?<=[\p{L}\d])(?![\p{L}\d]))(no|na|em|com|pra|para|de|do|da)\s*$/u,' ').replace(/\s+/g,' ').trim();
+  title = title.replace(/^(no|na|de|do|da|com|em|pra|para)\s+/,'').replace(/\s+(no|na|de|do|da|com|em|pra|para)$/,'');
+  if(out.type==='gasto' || out.type==='entrada') out.title = title ? title.charAt(0).toUpperCase()+title.slice(1) : out.category;
+  else if(out.type==='treino'){ out.title = (WORKOUT_TYPES[out.workout]||['','Treino'])[1]; }
+  else if(out.type==='peso'){ out.title = 'Pesagem'; }
+  else out.title = title ? title.charAt(0).toUpperCase()+title.slice(1) : raw;
+  return out;
+}
+
+function showParsed(p, src){
+  const labels = {tarefa:'✅ Tarefa', evento:'📅 Evento', gasto:'💸 Gasto', entrada:'💵 Entrada', treino:'🏋️ Treino', peso:'⚖️ Peso', meta:'🎯 Meta'};
+  const rows = [];
+  rows.push(['O quê', labels[p.type]]);
+  if(!['treino','peso'].includes(p.type)) rows.push(['Título', esc(p.title)]);
+  if(['tarefa','evento','treino','peso','gasto','entrada'].includes(p.type)) rows.push(['Data', fmtDate(p.date)]);
+  if(p.type==='meta') rows.push(['Prazo', fmtDate(p.date)]);
+  if(p.time) rows.push(['Hora', p.time]);
+  if(p.amount) rows.push(['Valor', fmtMoney(p.amount)]);
+  if(p.category) rows.push(['Categoria', esc({academico:'Acadêmico',profissional:'Profissional',pessoal:'Pessoal',faculdade:'Faculdade',trabalho:'Trabalho',financeiro:'Financeiro'}[p.category]||p.category)]);
+  if(p.type==='treino'){ rows.push(['Tipo', (WORKOUT_TYPES[p.workout]||['',p.workout]).join(' ')]); rows.push(['Duração', p.minutes + ' min']); }
+  if(p.type==='peso') rows.push(['Peso', p.kg + ' kg']);
+  const invalid = (p.type==='peso' && !(p.kg>20)) || ((p.type==='gasto'||p.type==='entrada') && !p.amount);
+  document.getElementById('voiceResult').innerHTML = `
+    <div class="parsed"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><span class="k">Berry entendeu</span><span class="src-tag">${src==='ia'?'🤖 IA':'📏 regras locais'}</span></div>
+      ${rows.map(([k,v])=>`<div class="row"><span style="color:var(--text-soft)">${k}</span><span>${v}</span></div>`).join('')}</div>
+    ${invalid ? '<p class="examples" style="color:var(--danger)">Faltou um número (valor ou peso). Tente de novo dizendo, por exemplo, “gastei 20 reais no lanche”.</p>' : ''}
+    <div style="display:flex;gap:8px;margin-top:12px">
+      <button class="btn btn-primary" style="flex:1" ${invalid?'disabled':''} onclick="confirmVoice()">✔ Confirmar</button>
+      <button class="btn btn-ghost" onclick="openVoice()">↺ Falar de novo</button></div>`;
+}
+function confirmVoice(){
+  const p = voiceParsed; if(!p) return;
+  state.game.stats.voice++; state.game.voiceDay = todayISO();
+  let msg = 'Adicionado pelo Berry ✨';
+  if(p.type==='tarefa'){ state.tasks.unshift({id:uid(), title:p.title, category:p.category||'pessoal', priority:p.priority||'media', due:p.date, done:false}); msg = 'Tarefa adicionada pelo Berry ✅'; }
+  else if(p.type==='evento'){ state.events.push({id:uid(), title:p.title, type:p.category||'pessoal', date:p.date, time:p.time||'09:00'}); msg = 'Evento na agenda 📅'; }
+  else if(p.type==='gasto' || p.type==='entrada'){ state.finance.transactions.unshift({id:uid(), type: p.type==='gasto'?'saida':'entrada', description:p.title, category:p.category||'Outros', amount:p.amount, date:p.date}); msg = p.type==='gasto' ? 'Gasto anotado 💸' : 'Entrada anotada 💵'; }
+  else if(p.type==='meta'){ state.goals.push({id:uid(), title:p.title, category:'pessoal', deadline:p.date, progress:0}); msg = 'Meta criada 🎯'; }
+  logHistory('🎤', `Pelo assistente: ${p.type} "${p.title}"`);
+  closeModal();
+  if(p.type==='treino'){ addWorkout(p.workout, p.minutes||45, p.date); }
+  else if(p.type==='peso'){ addWeight(+p.kg.toFixed(1), p.date); }
+  else { gainXP(5, msg + ' +5 XP'); }
+  render();
+}
+
+/* =========================================================
    DIÁLOGOS (substituem alert/confirm do navegador)
 ========================================================= */
 function uiConfirm(msg, okLabel='Confirmar', danger=false){
@@ -1474,7 +2160,7 @@ async function enterAsUser(user){
   const base = emptyState0();
   if(remote && remote.data && (!local || new Date(remote.updated_at).getTime() >= (local.updatedAt||0))){
     const r = remote.data;
-    state = {...base, ...r, finance:{...base.finance, ...(r.finance||{})}, prefs:{...base.prefs, ...(r.prefs||{})}, filters:{...base.filters, ...(r.filters||{})}, tab:'inicio'};
+    state = mergeState(base, r);
   } else if(local){
     state = local;
   } else {
