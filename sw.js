@@ -1,5 +1,5 @@
 // BerryLife service worker — troque a versão a cada publicação para os usuários receberem a atualização
-const VERSION = 'berrylife-v2.0.0';
+const VERSION = 'berrylife-v3.0.0';
 const ASSETS = ['./', './index.html', './manifest.json', './config.js', './icons/icon.svg'];
 
 self.addEventListener('install', (e) => {
