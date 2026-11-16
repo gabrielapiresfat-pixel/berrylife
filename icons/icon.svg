@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E24777"/><stop offset="1" stop-color="#C2185B"/></linearGradient>
+    <linearGradient id="berry" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF6B8E"/><stop offset="1" stop-color="#E0284F"/></linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <path d="M256 152c-70 0-120 34-120 92 0 74 64 152 120 176 56-24 120-102 120-176 0-58-50-92-120-92z" fill="url(#berry)" stroke="#fff" stroke-opacity=".25" stroke-width="6"/>
+  <g fill="#FFE9A8">
+    <ellipse cx="206" cy="232" rx="7" ry="10"/><ellipse cx="256" cy="220" rx="7" ry="10"/><ellipse cx="306" cy="232" rx="7" ry="10"/>
+    <ellipse cx="226" cy="282" rx="7" ry="10"/><ellipse cx="286" cy="282" rx="7" ry="10"/><ellipse cx="256" cy="332" rx="7" ry="10"/>
+    <ellipse cx="190" cy="282" rx="6" ry="9"/><ellipse cx="322" cy="282" rx="6" ry="9"/>
+  </g>
+  <path d="M256 168c-12-26-44-38-72-30 18 6 30 18 36 32-22-4-42 2-56 16 26 4 52 2 72-8 6 10 14 16 20 16s14-6 20-16c20 10 46 12 72 8-14-14-34-20-56-16 6-14 18-26 36-32-28-8-60 4-72 30z" fill="#4CAF7A"/>
+  <path d="M256 170v-34" stroke="#3D8F62" stroke-width="10" stroke-linecap="round"/>
+</svg>
