@@ -1,0 +1,48 @@
+// BerryLife service worker — troque a versão a cada publicação para os usuários receberem a atualização
+const VERSION = 'berrylife-v2.0.0';
+const ASSETS = ['./', './index.html', './manifest.json', './config.js', './icons/icon.svg'];
+
+self.addEventListener('install', (e) => {
+  e.waitUntil(caches.open(VERSION).then((c) => c.addAll(ASSETS)));
+  self.skipWaiting();
+});
+
+self.addEventListener('activate', (e) => {
+  e.waitUntil(
+    caches.keys().then((keys) => Promise.all(keys.filter(k => k !== VERSION).map(k => caches.delete(k))))
+  );
+  self.clients.claim();
+});
+
+self.addEventListener('fetch', (e) => {
+  const req = e.request;
+  if (req.method !== 'GET') return;
+  const url = new URL(req.url);
+  const isPage = req.mode === 'navigate' || url.pathname.endsWith('.html') || url.pathname.endsWith('/');
+
+  // Páginas: rede primeiro (pega a versão nova), cache se estiver offline
+  if (isPage) {
+    e.respondWith(
+      fetch(req).then((res) => {
+        const clone = res.clone();
+        caches.open(VERSION).then((c) => c.put(req, clone));
+        return res;
+      }).catch(() => caches.match(req).then(r => r || caches.match('./index.html')))
+    );
+    return;
+  }
+
+  // Demais arquivos (ícones, fontes): cache primeiro, atualiza em segundo plano
+  e.respondWith(
+    caches.match(req).then((cached) => {
+      const net = fetch(req).then((res) => {
+        if (res && (res.ok || res.type === 'opaque')) {
+          const clone = res.clone();
+          caches.open(VERSION).then((c) => c.put(req, clone));
+        }
+        return res;
+      }).catch(() => cached);
+      return cached || net;
+    })
+  );
+});
