@@ -1,0 +1,27 @@
+{
+  "name": "BerryLife — Life OS Pessoal",
+  "short_name": "BerryLife",
+  "description": "Organize sua vida acadêmica, profissional e financeira com carinho.",
+  "start_url": "./",
+  "id": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#FFF3F6",
+  "theme_color": "#C2185B",
+  "orientation": "portrait",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}
